@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "ISO-8859-1"/>
+    <title>View Users</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+         $(document).ready(function() {
+          $.ajax({
+            url: "https://jsonplaceholder.typicode.com/users"
+            }).then(function(data) {
+
+            for (i = 0; i < data.length; i++) {
+                $('#productsJson').append("<ul><li>"+data[i].id+"</li></ul>");
+                $('#productsJson').append("<p>name= "+data[i].name+"</p>");
+                $('#productsJson').append("<p>username= "+data[i].username+"</p>");
+                $('#productsJson').append("<p>email= "+data[i].email+"</p>");
+                $('#productsJson').append("<p><b>address</b></p>");
+                $('#productsJson').append("<p>street= "+data[i].address.street+"</p>");
+                $('#productsJson').append("<p>suite= "+data[i].address.suite+"</p>");
+                $('#productsJson').append("<p>city= "+data[i].address.city+"</p>");
+                $('#productsJson').append("<p>zipcode= "+data[i].address.zipcode+"</p>");
+                $('#productsJson').append("<p><b>geo<b/></p>");
+                $('#productsJson').append("<p>lat= "+data[i].address.geo.lat+"</p>")
+                $('#productsJson').append("<p>lng= "+data[i].address.geo.lng+"</p>")
+                $('#productsJson').append("<p>phone= "+data[i].phone+"</p>");
+                $('#productsJson').append("<p>website= "+data[i].website+"</p>");
+                $('#productsJson').append("<p><b>company</b></p>");
+                $('#productsJson').append("<p>company_name= "+data[i].company.name+"</p>");
+                $('#productsJson').append("<p>company_catchphrase= "+data[i].company.catchPhrase+"</p>");
+                $('#productsJson').append("<p>company_bs= "+data[i].company.bs+"</p>");
+            }
+            //console.log(data);
+            });
+        });
+      </script>
+</head>
+
+<body>
+<div id = "productsJson"> </div>
+</body>
+</html>

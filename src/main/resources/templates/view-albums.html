@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "ISO-8859-1"/>
+    <title>View Albums</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+         $(document).ready(function() {
+          $.ajax({
+            url: "https://jsonplaceholder.typicode.com/users/2/albums"
+            }).then(function(data) {
+
+            for (i = 0; i < data.length; i++) {
+                $('#productsJson').append("<p>userId= "+data[i].userId+"</p>");
+                $('#productsJson').append("<p>id= "+data[i].id+"</p>");
+                $('#productsJson').append("<p>title= "+data[i].title+"</p></br>");
+            }
+            //console.log(data);
+            });
+        });
+      </script>
+</head>
+
+<body>
+<div id = "productsJson"> </div>
+</body>
+</html>

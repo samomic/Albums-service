@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>User's albums</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <h1>Result</h1>
+    <p th:text="'id: ' + ${albums.id}" />
+    <p th:text="'content: ' + ${albums.content}" />
+    <a href="/albums">Go back</a>
+</body>
+</html>
